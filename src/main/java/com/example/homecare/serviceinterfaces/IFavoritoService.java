@@ -11,7 +11,7 @@ public interface IFavoritoService {
 
     public List<Favorito> list();
 
-    public void delete(int Id);
+    public void delete(int idFavorito);
 
     public Optional<Favorito>ListarId(int id);
 }

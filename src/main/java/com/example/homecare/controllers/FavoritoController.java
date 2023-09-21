@@ -1,16 +1,16 @@
 package com.example.homecare.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import com.example.homecare.dtos.FavoritoDto;
+import com.example.homecare.entities.Favorito;
 import com.example.homecare.serviceinterfaces.IFavoritoService;
 
 @RestController
-@RequestMapping("/favoritos")
+@RequestMapping("/favorito")
 public class FavoritoController {
     
     @Autowired
@@ -18,6 +18,16 @@ public class FavoritoController {
 
     @PostMapping
     public void registrarFavorito(@RequestBody FavoritoDto dto){
+        ModelMapper m=new ModelMapper();
+        Favorito f=m.map(dto, Favorito.class);
+        fS.insert(f);
+    }
 
+    @GetMapping
+    public java.util.List<FavoritoDto> list(){
+        return fS.list().stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, FavoritoDto.class);
+        }).collect(Collectors.toList());
     }
 }

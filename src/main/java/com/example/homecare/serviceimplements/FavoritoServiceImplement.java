@@ -25,8 +25,8 @@ public List<Favorito> list() {
 }
 
 @Override
-public void delete(int Id) {
-    fR.deleteById(Id);
+public void delete(int idFavorito) {
+    fR.deleteById(idFavorito);
 }
 
 @Override
