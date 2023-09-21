@@ -19,19 +19,19 @@ public class FavoritoDto {
         this.idFavorito=idFavorito;
     }
 
-    public Trabajadorhogar getTrabajadorHogarFavorito(){
+    public Trabajadorhogar getTrabajadorHogar(){
         return trabajadorhogar;
     }
 
-    public void setTrabajadorhogarFavorito(Trabajadorhogar trabajadorhogar){
+    public void setTrabajadorhogar(Trabajadorhogar trabajadorhogar){
         this.trabajadorhogar=trabajadorhogar;
     }
 
-    public Empleador getEmpleadorFavorito(){
+    public Empleador getEmpleador(){
         return empleador;
     }
 
-    public void setEmpleadorFavorito(Empleador empleador){
+    public void setEmpleador(Empleador empleador){
         this.empleador=empleador;
     }
 
