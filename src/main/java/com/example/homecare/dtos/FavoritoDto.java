@@ -19,7 +19,7 @@ public class FavoritoDto {
         this.idFavorito=idFavorito;
     }
 
-    public Trabajadorhogar getTrabajadorHogar(){
+    public Trabajadorhogar getTrabajadorhogar(){
         return trabajadorhogar;
     }
 

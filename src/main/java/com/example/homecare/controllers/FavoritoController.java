@@ -17,7 +17,7 @@ public class FavoritoController {
     private IFavoritoService fS;
 
     @PostMapping
-    public void registrarFavorito(@RequestBody FavoritoDto dto){
+    public void insert(@RequestBody FavoritoDto dto){
         ModelMapper m=new ModelMapper();
         Favorito f=m.map(dto, Favorito.class);
         fS.insert(f);
@@ -30,4 +30,7 @@ public class FavoritoController {
             return m.map(x, FavoritoDto.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id){fS.delete(id);}
 }

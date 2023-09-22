@@ -11,26 +11,18 @@ import com.example.homecare.serviceinterfaces.IFavoritoService;
 
 @Service
 public class FavoritoServiceImplement implements IFavoritoService{
-@Autowired
+    @Autowired
     private IFavoritoRepository fR;
 
-@Override
-public void insert(Favorito favorito) {
-    fR.save(favorito);
-}
+    @Override
+    public void insert(Favorito favorito) {fR.save(favorito);}
 
-@Override
-public List<Favorito> list() {
-    return fR.findAll();
-}
+    @Override
+    public List<Favorito> list() {return fR.findAll();}
 
-@Override
-public void delete(int idFavorito) {
-    fR.deleteById(idFavorito);
-}
+    @Override
+    public void delete(int idFavorito) {fR.deleteById(idFavorito);}
 
-@Override
-public Optional<Favorito> ListarId(int id) {
-    return Optional.of(fR.findById(id).orElse(new Favorito()));
-}
+    @Override
+    public Optional<Favorito> ListarId(int id){return Optional.of(fR.findById(id).orElse(new Favorito()));}
 }
