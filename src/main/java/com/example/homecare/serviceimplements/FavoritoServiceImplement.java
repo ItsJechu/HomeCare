@@ -1,8 +1,6 @@
 package com.example.homecare.serviceimplements;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.homecare.entities.Favorito;
@@ -22,7 +20,4 @@ public class FavoritoServiceImplement implements IFavoritoService{
 
     @Override
     public void delete(int idFavorito) {fR.deleteById(idFavorito);}
-
-    @Override
-    public Optional<Favorito> ListarId(int id){return Optional.of(fR.findById(id).orElse(new Favorito()));}
 }
